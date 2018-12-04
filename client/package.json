@@ -1,0 +1,40 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": {
+    "/auth/google": {
+      "target": "http://localhost:5000"
+    },
+    "/api/*": {
+      "target": "http://localhost:5000"
+    }
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^0.13.3",
+    "axios": "^0.16.2",
+    "babel-standalone": "^6.26.0",
+    "esprima": "^4.0.1",
+    "lodash": "^4.17.11",
+    "materialize-css": "^1.0.0-rc.2",
+    "react": "^16.0.0-alpha.13",
+    "react-codemirror": "^1.0.0",
+    "react-dom": "^16.0.0-alpha.13",
+    "react-materialize": "^2.4.8",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "react-scripts": "1.0.10",
+    "react-split-pane": "^0.1.84",
+    "react-stripe-checkout": "^2.4.0",
+    "redux": "^3.7.1",
+    "redux-form": "^7.0.1",
+    "redux-thunk": "^2.2.0",
+    "reselect": "^4.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
