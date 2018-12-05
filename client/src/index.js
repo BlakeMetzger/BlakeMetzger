@@ -11,8 +11,8 @@ import reducers from './reducers';
 import Globals from './globals';
 
 // Development only axios helpers!
-import axios from 'axios';
-window.axios = axios;
+//import axios from 'axios';
+//window.axios = axios;
 
 const store = createStore(reducers, {}, applyMiddleware(promise, reduxThunk));
 
