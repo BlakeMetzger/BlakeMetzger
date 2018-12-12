@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PostCard from '../common/PostCard';
+//import PostImage from "../../assets/first-post-img.jpg";
 import { fetchPost, deletePost } from '../../actions';
 
 class PostsShow extends Component {
@@ -28,15 +30,22 @@ class PostsShow extends Component {
 
 		return (
 			<div>
-				<Link to="/">Back To Index</Link>
+				<Link to="/">
+					<button className="btn pull-xs-right" />
+				</Link>
+
 				<button
 					className="btn btn-danger pull-xs-right"
 					onClick={this.onDeleteClick.bind(this)}>
 					Delete Post
 				</button>
-				<h3>{post.title}</h3>
-				<h6>Categories: {post.categories}</h6>
-				<p>{post.content}</p>
+				<PostCard
+					key={post.id}
+					title={post.title}
+					content={post.content}
+					image={post.image}
+					categories={post.categories}
+				/>
 			</div>
 		);
 	}

@@ -4,8 +4,30 @@ body {
 	font-size: 18px;
 	color: #313335;
 	padding-top: 0;
+	align-items: center;
+	flex: 1;
+	align-self: center;
+	justify-content: center;
+	line-height: inherit;
 }
 
+/* SideNav Styling */
+.sidenav {
+	background-image: linear-gradient(-0deg, #546e7a, peru);
+}
+.sidenav-trigger {
+	position: absolute;
+}
+.sidenav-overlay {
+	background-color: transparent;
+}
+
+.navbar-fixed {
+	z-index: 999;
+}
+/* SideNav Styling */
+
+/* Top Navigator Styling */
 .nav-wrapper {
 	background-image: linear-gradient(-90deg, #546e7a, peru);
 	align-content: center;
@@ -26,6 +48,7 @@ body {
 	margin-bottom: 100px;
 	background-color: black;
 }
+/* Top Navigator Styling */
 
 .errors {
 	white-space: pre;
@@ -546,8 +569,8 @@ span.CodeMirror-selectedtext {
 }
 
 .Resizer:hover {
-	-webkit-transition: all .2s linear;
-	transition: all .2s linear;
+	-webkit-transition: all 0.2s linear;
+	transition: all 0.2s linear;
 }
 
 .Resizer.horizontal {

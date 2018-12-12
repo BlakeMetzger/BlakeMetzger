@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Payments from './Payments';
-import Logo from '../assets/Logo.jpg';
-import '../style/style.css';
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import {Link} from "react-router-dom";
+import Payments from "./Payments";
+import Logo from "../assets/Logo.jpg";
+import SideNav from "./SideNav";
+import Playgrounds from "./Playgrounds";
+import "../style/style.css";
 
 class Header extends Component {
 	renderAuthContent() {
@@ -21,7 +23,7 @@ class Header extends Component {
 					<li key="4">
 						<Payments />
 					</li>,
-					<li key="5" style={{ margin: '0 10px' }}>
+					<li key="5" style={{margin: "0 10px"}}>
 						Credits: {this.props.auth.credits}
 					</li>,
 					<li key="6">
@@ -47,24 +49,21 @@ class Header extends Component {
 
 	render() {
 		return (
-			<nav>
-				<div className="nav-wrapper">
-					<Link
-						to={this.props.auth ? '/landing' : '/'}
-						className="left brand-logo"
-					>
-						<img className="nav-logo circle" src={Logo} />
-					</Link>
-					<ul className="right">{this.renderAuthContent()}</ul>
-					<ul className="right">{this.renderContent()}</ul>
-				</div>
-			</nav>
+			<div class="navbar-fixed">
+				<nav>
+					<div className="nav-wrapper">
+						<ul className="right">{this.renderAuthContent()}</ul>
+						<ul className="right">{this.renderContent()}</ul>
+					</div>
+				</nav>
+				<SideNav />
+			</div>
 		);
 	}
 }
 
-function mapStateToProps({ auth }) {
-	return { auth };
+function mapStateToProps({auth}) {
+	return {auth};
 }
 
 export default connect(mapStateToProps)(Header);

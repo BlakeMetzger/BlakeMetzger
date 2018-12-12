@@ -15,6 +15,7 @@
     "axios": "^0.16.2",
     "babel-standalone": "^6.26.0",
     "esprima": "^4.0.1",
+    "font-awesome": "^4.7.0",
     "lodash": "^4.17.11",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.0.0-alpha.13",

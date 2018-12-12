@@ -5,6 +5,7 @@ import * as actions from '../actions';
 
 import Playgrounds from './Playgrounds';
 
+import SideNav from './SideNav';
 import Header from './Header';
 import Landing from './Landing';
 import Blog from './Blog';
@@ -40,7 +41,4 @@ class App extends Component {
 	}
 }
 
-export default connect(
-	null,
-	actions
-)(App);
+export default connect(null, actions)(App);

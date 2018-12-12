@@ -1,4 +1,5 @@
 import 'materialize-css/dist/css/materialize.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -10,7 +11,7 @@ import App from './components/App';
 import reducers from './reducers';
 import Globals from './globals';
 
-// Development only axios helpers!
+// Development only axios helpers
 //import axios from 'axios';
 //window.axios = axios;
 
