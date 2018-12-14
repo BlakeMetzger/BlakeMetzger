@@ -55,10 +55,6 @@ export function deletePost(id, callback) {
 }
 
 export function fetchPosts() {
-	console.log(ROOT_URL);
-	console.log(API_KEY);
-	console.log(process.env.REACT_APP_API_KEY);
-	console.log(process.env.REACT_APP_ROOT_URL);
 	const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
 
 	return {

@@ -9,11 +9,11 @@ import promise from 'redux-promise';
 
 import App from './components/App';
 import reducers from './reducers';
-import Globals from './globals';
+import './globals';
 
-// Development only axios helpers
-//import axios from 'axios';
-//window.axios = axios;
+//Development only axios helpers
+import axios from 'axios';
+window.axios = axios;
 
 const store = createStore(reducers, {}, applyMiddleware(promise, reduxThunk));
 

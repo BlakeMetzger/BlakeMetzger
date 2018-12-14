@@ -4,11 +4,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import Playgrounds from './Playgrounds';
-
-import SideNav from './SideNav';
 import Header from './Header';
 import Landing from './Landing';
-import Blog from './Blog';
 //import Dashboard from './Dashboard';
 //import SurveyNew from './surveys/SurveyNew';
 import PostsIndex from './posts/posts_index';
@@ -23,22 +20,24 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="app-container">
-				<BrowserRouter className="app-container">
-					<div>
-						<Header className="nav-bottom" />
-						<div className="nav-bottom" />
+			<BrowserRouter className="app-container">
+				<div>
+					<Header className="nav-bottom" />
+					<div className="nav-bottom" />
+					<Switch>
 						<Route exact path="/" component={Landing} />
 						<Route path="/playgrounds" component={Playgrounds} />
-						<Route path="/blog" component={Blog} />
 						<Route path="/posts/new" component={PostsNew} />
 						<Route path="/posts/:id" component={PostsShow} />
 						<Route path="/posts" component={PostsIndex} />
-					</div>
-				</BrowserRouter>
-			</div>
+					</Switch>
+				</div>
+			</BrowserRouter>
 		);
 	}
 }
 
-export default connect(null, actions)(App);
+export default connect(
+	null,
+	actions
+)(App);

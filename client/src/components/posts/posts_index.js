@@ -39,6 +39,13 @@ class PostsIndex extends Component {
 					width: '90%',
 					margin: 'auto'
 				}}>
+				<Link to={`/posts/new`}>
+					<a
+						className="waves-effect btn"
+						style={{ backgroundColor: '#cf7541' }}>
+						New Post
+					</a>
+				</Link>
 				<PostBoard
 					//title={'Posts'}
 					content={
