@@ -8,14 +8,15 @@ export default class Playgrounds extends Component {
 		const width = window.innerHeight;
 
 		return (
-			<SplitPane
-				style={{ paddingTop: 15 }}
-				split="vertical"
-				defaultSize={width * 1.3}
-			>
-				<Editor />
-				<Viewer />
-			</SplitPane>
+			<div style={{ margin: 'auto' }}>
+				<SplitPane
+					style={{ height: '93%', paddingTop: 15, margin: 'auto' }}
+					split="vertical"
+					defaultSize={width * 1.3}>
+					<Editor />
+					<Viewer />
+				</SplitPane>
+			</div>
 		);
 	}
 }

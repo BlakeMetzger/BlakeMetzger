@@ -1,15 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PostCardSmall = ({
-	key,
-	title,
-	content,
-	image,
-	categories,
-	color,
-	width
-}) => {
+const PostCard = ({ key, title, content, image, categories, color, width }) => {
 	return (
 		<div
 			className="card"
@@ -39,4 +31,4 @@ const PostCardSmall = ({
 	);
 };
 
-export default PostCardSmall;
+export default PostCard;
