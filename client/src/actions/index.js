@@ -9,8 +9,10 @@ import {
 	DID_UPDATE_CODE
 } from './types';
 
-const ROOT_URL = process.env.REACT_APP_ROOT_URL;
-const API_KEY = process.env.REACT_APP_API_KEY;
+// const ROOT_URL = process.env.REACT_APP_ROOT_URL;
+// const API_KEY = process.env.REACT_APP_API_KEY;
+const ROOT_URL = 'http://reduxblog.herokuapp.com/api';
+const API_KEY = '?key=BLAKEMETZGER';
 
 // JS Playgrounds
 export function updateCode(code) {

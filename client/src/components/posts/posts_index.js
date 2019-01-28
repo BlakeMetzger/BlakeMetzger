@@ -25,7 +25,6 @@ class PostsIndex extends Component {
 						content={post.content}
 						image={post.image}
 						categories={post.categories}
-						image={post.image}
 					/>
 				</li>
 			);
@@ -40,11 +39,11 @@ class PostsIndex extends Component {
 					margin: 'auto'
 				}}>
 				<Link to={`/posts/new`}>
-					<a
+					<div
 						className="waves-effect btn"
 						style={{ backgroundColor: '#cf7541' }}>
 						New Post
-					</a>
+					</div>
 				</Link>
 				<PostBoard
 					//title={'Posts'}

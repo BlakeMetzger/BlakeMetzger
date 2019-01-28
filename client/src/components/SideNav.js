@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import 'materialize-css/dist/css/materialize.min.css';
 import Logo from '../assets/Logo.jpg';
@@ -9,7 +10,7 @@ import '../style/style.css';
 export default class SideNav extends Component {
 	componentDidMount() {
 		var elem = document.querySelectorAll('.sidenav');
-		var instance = M.Sidenav.init(elem, {
+		var sidenav = M.Sidenav.init(elem, {
 			edge: 'left',
 			inDuration: 300
 		});
@@ -18,34 +19,39 @@ export default class SideNav extends Component {
 	render() {
 		return (
 			<div>
-				<a href="#" data-target="slide-out" className="sidenav-trigger">
-					<img className="nav-logo circle" src={Logo} />
-				</a>
-				<ul id="slide-out" className="sidenav" style={{ textAlign: 'center' }}>
-					<li />
-					<li>
-						<a href="#!">
-							<i className="material-icons">cloud</i>First Link With Icon
-						</a>
-					</li>
-					<li>
-						<a href="#!">Second Link</a>
-					</li>
-					<li style={{ textAlign: 'center' }}>
-						<Divider />
-					</li>
-					<li>
-						<a className="subheader">Subheader</a>
-					</li>
-					<li>
-						<a className="waves-effect" href="#!">
-							Third Link With Waves
-						</a>
-					</li>
-					<li>
-						<SocialMediaIcons />
-					</li>
-				</ul>
+				<button data-target="slide-out" className="sidenav-trigger" style={{backgroundColor: 'transparent', border: 'none', cursor: 'pointer', margin: 'auto'}}>
+					<img className="nav-logo circle" src={Logo} alt="" />
+				</button>
+				<div style={{ marginTop: '3px'}}>
+					<ul id="slide-out" className="sidenav" style={{ textAlign: 'center' }} >
+						<div className="sidenav-close" style={{ marginTop: '40%'}}>
+							<Link to="/">
+									<img className="nav-logo circle" src={Logo} alt="" style={{ width: '80%', paddingTop: 22 }} />
+									<div>
+										About Me
+									</div>
+							</Link>
+						</div>
+						<li>
+							<Link to="/resources" className="sidenav-close" style={{ color: "white" }}>
+								Resources
+							</Link>
+						</li>
+						<li>
+							<Link to="/posts" className="sidenav-close" style={{ color: "white" }}>
+								Blog
+							</Link>
+						</li>
+						<li>
+							<Link to="/playgrounds" className="sidenav-close" style={{ color: "white" }}>
+								JS Playgrounds
+							</Link>
+						</li>
+						<li style={{paddingTop: 20 }}>
+							<SocialMediaIcons />
+						</li>
+					</ul>
+				</div>
 			</div>
 		);
 	}

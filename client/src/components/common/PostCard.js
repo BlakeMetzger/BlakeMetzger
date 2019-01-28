@@ -11,7 +11,7 @@ const PostCard = ({ key, title, content, image, categories, color, width }) => {
 				margin: 'auto'
 			}}>
 			<div className="card-image waves-effect waves-block waves-light">
-				<img className="activator" src={image} />
+				<img className="activator" src={image} alt="" />
 			</div>
 			<div className="card-content">
 				<span className="card-title activator grey-text text-darken-4">

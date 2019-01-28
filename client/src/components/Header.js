@@ -47,16 +47,22 @@ class Header extends Component {
 		];
 	}
 
+	renderSideNav() {
+		return <SideNav />
+	}
+
 	render() {
 		return (
-			<div className="navbar-fixed">
-				<nav>
-					<div className="nav-wrapper">
-						<ul className="right">{this.renderAuthContent()}</ul>
-						<ul className="right">{this.renderContent()}</ul>
-					</div>
-				</nav>
-				<SideNav />
+			<div>
+				<div className="navbar">
+					<nav>
+						<div className="nav-wrapper">
+							<ul className="right">{this.renderAuthContent()}</ul>
+							<ul className="right">{this.renderContent()}</ul>
+							<ul className="left">{this.renderSideNav()}</ul>
+						</div>
+					</nav>
+				</div>
 			</div>
 		);
 	}

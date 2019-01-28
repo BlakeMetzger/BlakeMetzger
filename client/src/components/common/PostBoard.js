@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 const PostBoard = ({ title, content, image, footer, color, width }) => {
 	return (
@@ -11,7 +11,7 @@ const PostBoard = ({ title, content, image, footer, color, width }) => {
 			}}>
 			<div className="card blue-grey darken-1">
 				<div className="card-image">
-					<img src={image} />
+					<img src={image} alt=""/>
 				</div>
 				<div className="card-title">
 					<h4>{title}</h4>
@@ -21,7 +21,7 @@ const PostBoard = ({ title, content, image, footer, color, width }) => {
 				</div>
 				<div className="card-action">
 					<a
-						href=""
+						//href=""
 						onClick={() => {
 							window.scrollTo(0, 0);
 						}}>
