@@ -4,7 +4,10 @@ class SocialMediaIcons extends Component {
 	render() {
 		return (
 			<div>
-				<a href="https://github.com/BlakeMetzger" style={styles.iconStyle}>
+				<a
+					href="https://github.com/BlakeMetzger"
+					target="_blank"
+					style={styles.iconStyle}>
 					<i
 						className="fa fa-github medium waves-effect btn-medium social waves-gray circle"
 						style={(styles.iconStyle, { color: '#282d31', float: 'right' })}
@@ -12,6 +15,7 @@ class SocialMediaIcons extends Component {
 				</a>
 				<a
 					href="https://www.linkedin.com/in/blakemetzger/"
+					target="_blank"
 					style={styles.iconStyle}>
 					<i
 						className="fa fa-linkedin medium waves-effect waves-light"

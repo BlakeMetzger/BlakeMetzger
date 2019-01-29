@@ -1,1 +1,3 @@
-blakemetzger.com
+This is the source code repository for my website...
+
+http://blakemetzger.herokuapp.com
