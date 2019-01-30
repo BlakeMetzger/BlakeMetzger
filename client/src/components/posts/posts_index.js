@@ -14,13 +14,14 @@ class PostsIndex extends Component {
 
 	renderPosts() {
 		return _.map(this.props.posts, post => {
+			//console.log(post.id);
 			return (
 				<li
 					className="list-group-item"
 					key={post.id}
 					style={{ paddingBottom: 20 }}>
 					<PostCard
-						key={post.id}
+						id={post.id}
 						title={post.title}
 						content={post.content}
 						image={post.image}
@@ -45,13 +46,11 @@ class PostsIndex extends Component {
 						New Post
 					</div>
 				</Link>
-				<PostBoard
-					//title={'Posts'}
-					content={
-						<ul className="list-group" style={{ paddingBottom: 10 }}>
+				<PostBoard style={{ width: '70%' }}>
+						<ul className="list-group" style={{paddingTop: 12}}>
 							{this.renderPosts()}
 						</ul>
-					}
+				</PostBoard>
 				/>
 			</div>
 		);

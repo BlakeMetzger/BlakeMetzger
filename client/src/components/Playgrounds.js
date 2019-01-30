@@ -8,11 +8,26 @@ export default class Playgrounds extends Component {
 		const width = window.innerHeight;
 
 		return (
-			<div style={{ margin: 'auto' }}>
+			<div
+				className="card"
+				style={{
+					width: '80%',
+					margin: 'auto',
+					border: 'none',
+					boxShadow: 'none',
+					paddingTop: -15,
+					marginTop: 0,
+					backgroundColor: 'transparent'
+				}}>
 				<SplitPane
-					style={{ height: '93%', paddingTop: 15, margin: 'auto' }}
+					style={{
+						height: 870,
+						paddingTop: 10,
+						margin: 'auto',
+						borderBottom: '2px dotted peru'
+					}}
 					split="vertical"
-					defaultSize={width * 1.3}>
+					defaultSize={width * 1.1}>
 					<Editor />
 					<Viewer />
 				</SplitPane>

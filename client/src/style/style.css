@@ -12,16 +12,16 @@ body {
 }
 
 .link-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
 }
 
 .link-button:hover,
 .link-button:focus {
-text-decoration: none;
+	text-decoration: none;
 }
 
 /* SideNav Styling */
@@ -72,6 +72,7 @@ text-decoration: none;
 	background-color: #313335;
 	text-indent: 8px;
 	border-top: 2px dotted peru;
+	border-right: 2px dotted peru;
 }
 
 .ReactCodeMirror {
@@ -582,6 +583,7 @@ span.CodeMirror-selectedtext {
 .Resizer.horizontal {
 	height: 2px;
 	border-top: 4px dotted peru;
+
 	cursor: row-resize;
 	width: 100%;
 }

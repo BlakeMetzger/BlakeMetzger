@@ -7,9 +7,10 @@ import { fetchPost, deletePost } from '../../actions';
 
 class PostsShow extends Component {
 	componentDidMount() {
-		//if (!this.props.post) {
-		const { id } = this.props.match.params;
-		this.props.fetchPost(id);
+		if (!this.props.post) {
+			const { id } = this.props.match.params;
+			this.props.fetchPost(id);
+		}
 		//} add line to reduce network resources.
 	}
 
@@ -55,4 +56,7 @@ function mapStateToProps({ posts }, ownProps) {
 	return { post: posts[ownProps.match.params.id] };
 }
 
-export default connect(mapStateToProps, { fetchPost, deletePost })(PostsShow);
+export default connect(
+	mapStateToProps,
+	{ fetchPost, deletePost }
+)(PostsShow);
