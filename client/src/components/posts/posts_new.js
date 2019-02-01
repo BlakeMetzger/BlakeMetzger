@@ -15,7 +15,7 @@ class PostsNew extends Component {
 		return (
 			<div className={className}>
 				<label>{field.label}</label>
-				<input className="materialize-textarea" {...field.input} />
+				<textarea className="materialize-textarea" {...field.input} />
 				<div className="text-help">{touched ? error : ''}</div>
 			</div>
 		);
@@ -33,7 +33,7 @@ class PostsNew extends Component {
 		return (
 			<Board
 				content={
-					<form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+					<form onSubmit={handleSubmit(this.onSubmit.bind(this))} autoComplete="off">
 						<Field label="Title:" name="title" component={this.renderField} />
 						<Field
 							label="Categories:"

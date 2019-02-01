@@ -25,7 +25,7 @@ const Landing = () => {
 						page for a list of resources to get you started on you started on
 						your path. The source code for this website is available at my
 						<a
-							href="https://github.com/BlakeMetzger"
+							href="https://github.com/BlakeMetzger/BlakeMetzger"
 							target="_blank"
 							style={{ color: 'peru' }}>
 							{' '}

@@ -6,6 +6,7 @@ import * as actions from '../actions';
 import Playgrounds from './Playgrounds';
 import Header from './Header';
 import Landing from './Landing';
+import Resources from './Resources';
 //import Dashboard from './Dashboard';
 //import SurveyNew from './surveys/SurveyNew';
 import PostsIndex from './posts/posts_index';
@@ -30,6 +31,7 @@ class App extends Component {
 						<Route path="/posts/new" component={PostsNew} />
 						<Route path="/posts/:id" component={PostsShow} />
 						<Route path="/posts" component={PostsIndex} />
+						<Route path="/resources" component={Resources} />
 					</Switch>
 				</div>
 			</BrowserRouter>

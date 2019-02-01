@@ -2,23 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PostCard from '../common/PostCard';
+import PostBoard from '../common/PostBoard';
 //import PostImage from "../../assets/first-post-img.jpg";
-import { fetchPost, deletePost } from '../../actions';
+import { fetchPosts, fetchPost, deletePost } from '../../actions';
 
 class PostsShow extends Component {
-	componentDidMount() {
-		if (!this.props.post) {
-			const { id } = this.props.match.params;
-			this.props.fetchPost(id);
-		}
-		//} add line to reduce network resources.
+	componentWillMount() {
+		const { id } = this.props.match.params;
+		!this.props.posts ? this.props.fetchPosts() : this.props.fetchPost(id);
 	}
 
 	onDeleteClick() {
 		const { id } = this.props.match.params;
 
 		this.props.deletePost(id, () => {
-			this.props.history.push('/');
+			this.props.history.push('/posts');
 		});
 	}
 
@@ -30,23 +28,28 @@ class PostsShow extends Component {
 		}
 
 		return (
-			<div>
-				<Link to="/">
-					<button className="btn pull-xs-right" />
+			<div style={{ width: '90%', margin: 'auto', zIndex: -3, position: 'absolute' }}>
+				<Link to="/posts" style={{ zIndex: -200, paddingRight: 10, paddingLeft: '5%'}}>
+					<button className="btn" style={{ backgroundColor: '#cf7541' }}>
+						Go Back
+					</button>
 				</Link>
 
 				<button
-					className="btn btn-danger pull-xs-right"
+					className="btn btn-danger"
+					style={{ backgroundColor: '#cf7541' }}
 					onClick={this.onDeleteClick.bind(this)}>
 					Delete Post
 				</button>
-				<PostCard
-					key={post.id}
-					title={post.title}
-					content={post.content}
-					image={post.image}
-					categories={post.categories}
-				/>
+				<PostBoard style={{ width: '70%' }}>
+					<PostCard
+						key={post.id}
+						title={post.title}
+						content={post.content}
+						image={post.image}
+						categories={post.categories}
+					/>
+				</PostBoard>
 			</div>
 		);
 	}
@@ -58,5 +61,5 @@ function mapStateToProps({ posts }, ownProps) {
 
 export default connect(
 	mapStateToProps,
-	{ fetchPost, deletePost }
+	{ fetchPosts, fetchPost, deletePost }
 )(PostsShow);

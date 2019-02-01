@@ -14,7 +14,6 @@ class PostsIndex extends Component {
 
 	renderPosts() {
 		return _.map(this.props.posts, post => {
-			//console.log(post.id);
 			return (
 				<li
 					className="list-group-item"
@@ -42,7 +41,7 @@ class PostsIndex extends Component {
 				<Link to={`/posts/new`}>
 					<div
 						className="waves-effect btn"
-						style={{ backgroundColor: '#cf7541' }}>
+						style={{ backgroundColor: '#cf7541', zIndex: -2 }}>
 						New Post
 					</div>
 				</Link>
