@@ -20,7 +20,7 @@ class PostCard extends Component {
 						{this.props.title}
 						<i className="material-icons right">more_vert</i>
 					</span>
-					<p style={{ color: 'white' }}>{this.props.content}</p>
+					<p className="flow-text" style={{ color: 'white' }}>{this.props.content}</p>
 					<Link to={`/posts/${this.props.id}`} style={{ color: 'peru' }}>Continue reading...</Link>
 				</div>
 				<div className="card-reveal">

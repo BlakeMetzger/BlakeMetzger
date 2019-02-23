@@ -23,12 +23,13 @@ class PostsNew extends Component {
 
 	onSubmit(values) {
 		this.props.createPost(values, () => {
-			this.props.history.push('/');
+			this.props.history.push('/posts');
 		});
 	}
 
 	render() {
 		const { handleSubmit } = this.props;
+		const { btnStyle, btnMargin } = style;
 
 		return (
 			<Board
@@ -48,18 +49,15 @@ class PostsNew extends Component {
 						<button
 							type="submit"
 							className="btn btn-primary"
-							style={{ backgroundColor: '#cf7541', marginTop: 10 }}>
+							style={btnStyle}>
 							Submit
 						</button>
 						<Link
 							to="/posts"
-							className="btn btn-danger darken-1"
-							style={{
-								backgroundColor: '#cf7541',
-								marginLeft: 10,
-								marginTop: 10
-							}}>
-							Cancel
+							style={btnMargin}>
+							<button className="btn" style={btnStyle}>
+								Cancel
+							</button>
 						</Link>
 					</form>
 				}
@@ -82,6 +80,19 @@ function validate(values) {
 	}
 
 	return errors;
+}
+
+const style={
+	btnStyle: {
+		backgroundColor: '#cf7541',
+		lineHeight: 'inherit',
+		marginTop: 10,
+		fontWeight: 475
+	},
+	btnMargin: {
+		marginLeft: 10,
+		marginRight: 10
+	}
 }
 
 export default reduxForm({

@@ -19,35 +19,60 @@ export default class SideNav extends Component {
 	render() {
 		return (
 			<div>
-				<button data-target="slide-out" className="sidenav-trigger" style={{backgroundColor: 'transparent', border: 'none', cursor: 'pointer', margin: 'auto'}}>
+				<button
+					data-target="slide-out"
+					className="sidenav-trigger"
+					style={{
+						backgroundColor: 'transparent',
+						border: 'none',
+						cursor: 'pointer',
+						margin: 'auto'
+					}}>
 					<img className="nav-logo circle" src={Logo} alt="" />
 				</button>
-				<div style={{ marginTop: '3px'}}>
-					<ul id="slide-out" className="sidenav" style={{ textAlign: 'center' }} >
-						<div className="sidenav-close" style={{ marginTop: '40%'}}>
+				<div style={{ marginTop: '4px' }}>
+					<ul
+						id="slide-out"
+						className="sidenav"
+						style={{ textAlign: 'center' }}>
+						<div className="sidenav-close" style={{ marginTop: '20%' }}>
 							<Link to="/">
-									<img className="nav-logo circle" src={Logo} alt="" style={{ width: '80%', paddingTop: 22 }} />
-									<div>
-										About Me
-									</div>
+								<img
+									className="nav-logo circle"
+									src={Logo}
+									alt=""
+									hn
+									nm
+									style={{ width: '80%' }}
+								/>
+								<div>About Me</div>
 							</Link>
 						</div>
 						<li>
-							<Link to="/resources" className="sidenav-close" style={{ color: "white" }}>
+							<Link
+								to="/resources"
+								className="sidenav-close"
+								style={{ color: 'white' }}>
 								Resources
 							</Link>
 						</li>
 						<li>
-							<Link to="/posts" className="sidenav-close" style={{ color: "white" }}>
+							<Link
+								to="/posts"
+								className="sidenav-close"
+								style={{ color: 'white' }}>
 								Blog
 							</Link>
 						</li>
 						<li>
-							<Link to="/playgrounds" className="sidenav-close" style={{ color: "white" }}>
+							<Link
+								to="/playgrounds"
+								className="sidenav-close"
+								style={{ color: 'white' }}>
 								JS Playgrounds
 							</Link>
 						</li>
-						<li style={{paddingTop: 20 }}>
+						<li style={{ paddingTop: 20 }}>
 							<SocialMediaIcons />
 						</li>
 					</ul>

@@ -29,7 +29,7 @@ class PostBoard extends Component {
 		const hideImg = this.state.isImgHidden ? '' : 'hide';
 
 		return (
-			<div className="row" style={this.props.style}>
+			<div className="container" style={this.props.style}>
 				<div className="card blue-grey darken-1">
 					<div className={`card-image ${hideImg}`}>
 						<img src={this.props.image} alt="" />

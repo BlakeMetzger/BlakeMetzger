@@ -12,9 +12,7 @@ class PostsShow extends Component {
 		!this.props.posts ? this.props.fetchPosts() : this.props.fetchPost(id);
 	}
 
-	onDeleteClick() {
-		const { id } = this.props.match.params;
-
+	onDeleteClick(id) {
 		this.props.deletePost(id, () => {
 			this.props.history.push('/posts');
 		});
@@ -28,18 +26,28 @@ class PostsShow extends Component {
 		}
 
 		return (
-			<div style={{ width: '90%', margin: 'auto', zIndex: -3, position: 'absolute' }}>
-				<Link to="/posts" style={{ zIndex: -200, paddingRight: 10, paddingLeft: '5%'}}>
-					<button className="btn" style={{ backgroundColor: '#cf7541' }}>
-						Go Back
+			<div
+				style={{
+					width: '90%',
+					margin: 'auto',
+					zIndex: -3,
+					position: 'absolute'
+				}}>
+				<Link
+					to="/posts"
+					style={{ zIndex: -200, paddingRight: 10, paddingLeft: '5%' }}>
+					<button className="btn" style={{ backgroundColor: '#cf7541', lineHeight: 'inherit', fontWeight: 475 }}>
+					<i className="fa fa-arrow-circle-left" style={{ fontSize: 20, verticalAlign: 'middle' }}/>
+						{'  '} Back
 					</button>
 				</Link>
 
 				<button
 					className="btn btn-danger"
-					style={{ backgroundColor: '#cf7541' }}
+					style={{ backgroundColor: '#cf7541', lineHeight: 'inherit', fontWeight: 475}}
 					onClick={this.onDeleteClick.bind(this)}>
-					Delete Post
+					<i className="fa fa-minus-circle" style={{ fontSize: 20, verticalAlign: 'middle' }}/>
+					{'  '} Delete Post
 				</button>
 				<PostBoard style={{ width: '70%' }}>
 					<PostCard
