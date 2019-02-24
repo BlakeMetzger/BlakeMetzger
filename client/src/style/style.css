@@ -32,11 +32,12 @@ body {
 
 .sidenav-trigger {
 	padding-top: 0;
+	width: 35;
 }
 
 @media only screen and (min-width: 600px) {
 	.sidenav-trigger {
-		padding-top: 10;
+		width: 65;
 	}
 }
 
@@ -249,12 +250,12 @@ body {
 .cm-s-default .cm-variable {
 	color: #a9b7c6;
 }
-,
+
 .cm-s-default .cm-punctuation,
 .cm-s-default .cm-property {
 	color: #ffc66d;
 }
-,
+
 .cm-s-default .cm-operator {
 	color: #a9b7c6;
 }

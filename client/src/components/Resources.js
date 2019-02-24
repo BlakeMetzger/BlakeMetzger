@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { isMobile } from 'react-device-detect';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import 'materialize-css/dist/css/materialize.min.css';
 import PostBoard from './common/PostBoard';
@@ -7,7 +8,7 @@ import TapTarget from './common/TapTarget';
 import '../style/resources.css';
 
 class Resources extends Component {
-	state = { isHidden: false };
+	state = { isHidden: false, rowSize: 6 };
 
 	componentWillMount() {
 		let visited = sessionStorage.getItem('alreadyVisitedResources');
@@ -23,11 +24,23 @@ class Resources extends Component {
 	}
 
 	componentDidMount() {
+		window.addEventListener('resize', this.updateRowSize);
 		var elems = document.querySelectorAll('.collapsible.expandable');
 		var instance = M.Collapsible.init(elems, {
-			accordion: false
+			accordion: true
 		});
+		if (isMobile && this.state.rowSize !== 12) {
+			this.setState({ rowSize: 12 });
+		}
 	}
+
+	updateRowSize = () => {
+		if (window.innerWidth < 768) {
+			this.setState({ rowSize: 12 });
+		} else {
+			this.setState({ rowSize: 6 });
+		}
+	};
 
 	render() {
 		return (
@@ -44,7 +57,7 @@ class Resources extends Component {
 						<div className="post-board-content">
 							<h4 className="content-header">Resources:</h4>
 						</div>
-						<div className="col s6 on-small s12">
+						<div className={`col s${this.state.rowSize}`}>
 							<ul className="collapsible expandable">
 								<li>
 									<div className="collapsible-header">
@@ -75,7 +88,7 @@ class Resources extends Component {
 								</li>
 							</ul>
 						</div>
-						<div className="col s6 on-small s12">
+						<div className={`col s${this.state.rowSize}`}>
 							<ul className="collapsible expandable" style={{ color: 'peru' }}>
 								<li>
 									<div className="collapsible-header">

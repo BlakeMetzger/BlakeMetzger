@@ -42,7 +42,7 @@ class Viewer extends Component {
 	}
 
 	render() {
-		const defaultHeight = window.innerHeight / 1.3;
+		const defaultHeight = this.props.height / 1.7;
 
 		return (
 			<SplitPane

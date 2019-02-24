@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { isMobile, isBrowser } from 'react-device-detect';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import 'materialize-css/dist/css/materialize.min.css';
 import Logo from '../assets/Logo.jpg';
@@ -8,6 +9,8 @@ import SocialMediaIcons from './common/SocialMediaIcons';
 import '../style/style.css';
 
 export default class SideNav extends Component {
+	state = { logoSize: 65 };
+
 	componentDidMount() {
 		var elem = document.querySelectorAll('.sidenav');
 		var sidenav = M.Sidenav.init(elem, {
@@ -17,8 +20,22 @@ export default class SideNav extends Component {
 	}
 
 	render() {
+		if (isMobile && this.state.logoSize !== 60) {
+			this.setState({ logoSize: 60 });
+		}
+
 		return (
-			<div>
+			<div
+				onMouseEnter={() => {
+					if (this.state.logoSize !== 75) {
+						this.setState({ logoSize: 75 });
+					}
+				}}
+				onMouseLeave={() => {
+					if (this.state.logoSize === 75) {
+						this.setState({ logoSize: 65 });
+					}
+				}}>
 				<button
 					data-target="slide-out"
 					className="sidenav-trigger"
@@ -26,7 +43,8 @@ export default class SideNav extends Component {
 						backgroundColor: 'transparent',
 						border: 'none',
 						cursor: 'pointer',
-						margin: 'auto'
+						margin: 'auto',
+						width: this.state.logoSize
 					}}>
 					<img className="nav-logo circle" src={Logo} alt="" />
 				</button>

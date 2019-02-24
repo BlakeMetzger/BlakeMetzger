@@ -34,6 +34,7 @@ class PostsIndex extends Component {
 					key={post.id}
 					style={{ paddingBottom: 20 }}>
 					<PostCard
+						hoverable={true}
 						id={post.id}
 						title={post.title}
 						content={post.content}
@@ -53,6 +54,7 @@ class PostsIndex extends Component {
 					<p>Keep up to date with my latest Blog posts.</p>
 				</TapTarget>
 				<div
+					className="hoverable"
 					style={{
 						width: '100%',
 						margin: 'auto'
@@ -79,7 +81,6 @@ class PostsIndex extends Component {
 							{this.renderPosts()}
 						</ul>
 					</PostBoard>
-					/>
 				</div>
 			</div>
 		);

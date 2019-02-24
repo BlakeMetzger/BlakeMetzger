@@ -14,6 +14,7 @@
 		"mime": "^2.4.0",
 		"react": "^16.0.0-alpha.13",
 		"react-codemirror": "^1.0.0",
+		"react-device-detect": "^1.6.2",
 		"react-dom": "^16.0.0-alpha.13",
 		"react-materialize": "^2.4.8",
 		"react-redux": "^5.0.5",

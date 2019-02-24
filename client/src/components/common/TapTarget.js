@@ -35,7 +35,7 @@ class TapTarget extends Component {
 		const showClose = () => {
 			return this.state.isHidden ? 'hide' : '';
 		};
-		console.log(showClose());
+
 		return (
 			<div style={(container, { marginTop: setMargin() })}>
 				<a
